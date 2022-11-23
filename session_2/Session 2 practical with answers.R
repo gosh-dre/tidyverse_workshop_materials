@@ -1,4 +1,7 @@
 # TIBBLE and PIPE
+# load libraries
+library(tidyverse)
+library(gapminder)
 
 # list three ways in which the tibble differs from the data frame
 # provide code to illustrate the differences
