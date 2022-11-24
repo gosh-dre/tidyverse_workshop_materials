@@ -86,8 +86,8 @@
   # - from the magrittr package (Ceci n'est pas une pipe)
 
   # in base R the pipe is |> (only recently introduced in R 4.1)
-  'base R pipe' |>
-    print()
+  # 'base R pipe' |>
+  #   print()
 
   # learn to type it as the keyboard shortcut ctrl-shift-M or cmd-shift-M (MacOS)
   # set the pipe type ( %>% or |> ) in RStudio code preferences
@@ -127,8 +127,8 @@
   1:10 %>% plot(y = 11:20)
   # and
   1:10 %>% plot(x = 11:20, y = .)
-  # or with base R pipe use _ not .
-  1:10 |> plot(x = 11:20, y = _)
+  # # or with base R pipe use _ not .
+  # 1:10 |> plot(x = 11:20, y = _)
 
   # here are some pipe examples
   # note how the pipe and tibble work together
