@@ -491,12 +491,9 @@ lifeExp_yearlyDiff ## OK
 #   gapminder %>%
 #   select(country, continent, year, lifeExp) %>%
 #   group_by(country) %>%
-#   mutate(lifeExp_yearlyDiff =
-#            lifeExp - (lifeExp,n=1),
-#          number_years =
-#            year - (year,n=1),
-#          lifeExp_yearlyRate =
-#            lifeExp_yearlyDiff/number_years)
+#   mutate(lifeExp_yearlyDiff = lifeExp - (lifeExp, n=1),
+#          number_years = year - (year, n=1),
+#          lifeExp_yearlyRate = lifeExp_yearlyDiff/number_years)
 
 lifeExp_yearlyDiff %>% 
   select(country, continent,

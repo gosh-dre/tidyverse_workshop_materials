@@ -21,7 +21,7 @@ output:
 
 ```{r setup, include=FALSE}
 ## library calls here, if you don't have them installed, run install.packages("<my_package>") and then run the library() calls.
-knitr::opts_knit$set(root.dir = here::here())
+#knitr::opts_knit$set(root.dir = here::here())
 knitr::opts_chunk$set(echo = FALSE)
 knitr::opts_chunk$set(warning = FALSE)
 ## knitr::opts_chunk$set(dev = "cairo_pdf")
@@ -29,7 +29,7 @@ knitr::opts_chunk$set(warning = FALSE)
 #install.packages(rmdformats)
 
 library(tidyverse)
-library(lubridate)
+#library(lubridate)
 library(scales)
 library(janitor)
 library(gapminder)
@@ -83,6 +83,10 @@ ggp_bar <- ggplot(data = gapminder, aes(x=continent)) +
 ggp_bar
 
 ## geom_col
+
+# gapminder %>%
+#     ggplot(aes(x=continent, y=pop))
+
 ggp_col <- ggplot(data = gapminder %>%
                        filter(continent == "Oceania", year == 2007),
                   aes(x=country, y=pop)) + # can do dataframe manipulation within the data call with pipes.
@@ -172,7 +176,7 @@ ggp_box <- ggplot(data = gapminder, aes(x = fct_reorder(continent, lifeExp), y =
     geom_jitter(alpha = 0.2) + #geom_jitter is a variation on geom_point(). Swap out for geom_point() to see the effects.
     scale_y_continuous(breaks = round(seq(min(gapminder$lifeExp), max(gapminder$lifeExp), by = 10),0)) + # seq() is for sequence, change the by = 10 to a different value to see the effects.
     coord_flip() + # comment coord_flip() out to see the effects.
-    labs(title = "Boxplot of life expectancy by continent", x = "Life Expectancy", y = "Continent") +
+    labs(title = "Boxplot of life expectancy by continent", y = "Life Expectancy", x = "Continent") +
     theme_light() +
     theme(legend.position = "none") + # removed the legend as not visually necessary in this plot.
     NULL
